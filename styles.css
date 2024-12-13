@@ -1,43 +1,96 @@
+@font-face {
+    font-family: "Arcon-Regular";
+    src: url(fonts/Arcon-Regular.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arcon-Regular;
 }
 
 .root-container {
     display: grid;
-    grid-template: 100px 400px / 200px 550px;
-    grid-auto-rows: 400px;
+    grid-template: 30vh 100vh / 40vh 1fr 48vh;
+    grid-template-areas: 
+        "sidebar header header"
+        "sidebar projects infos";
 }
 
 .root-container > div {
-    border: 2px solid pink;
-}
-
-.content {
-    display: grid;
-    grid-template: 40px 100px 100px 100px / 160px 160px 160px;
-    column-gap: 15px;
-    row-gap: 20px;
-    
-}
-
-.content > .headers {
-    border: 2px solid violet;
-}
-
-.content > .cards {
-    border: 2px solid yellowgreen;
-}
-
-.header {
-    background-color: white;
+    border: 2px solid red;
 }
 
 .sidebar {
+    grid-area: sidebar;
     background-color: skyblue;
 }
 
-.content {
+.top-content {
+    grid-area: header;
+    display: grid;
+    grid-row: 200px;
+    background-color: whitesmoke;
+}
+
+.top-content .upper {
+    border: 2px solid orange;
+}
+
+.top-content .lower {
+    border: 2px solid gold;
+}
+
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template: 30vh 30vh 30vh / 55vh 55vh;
+    gap: 20px;
+    padding: 20px;
     background-color: gainsboro;
+}
+
+.projects > .card {
+    border-radius: 10px;
+    border-left: 7px solid gold;
+    background-color: white;
+    box-shadow: 2px 2px 2px black;
+    padding: 30px 50px 20px 20px;
+    div {
+        justify-self: start;
+
+    }
+        h2 {
+            line-height: 1.5;
+        }
+        p {
+            font-size: 2.1vh;
+            opacity: 0.7;
+        }
+
+}
+
+.other-info {
+    grid-area: infos;
+    display: grid;
+    grid-template: 1fr 1fr;
+    row-gap: 15px;
+    background-color: gainsboro;
+    padding: 20px;
+}
+
+.other-info .info {
+    border: 2px solid yellowgreen;
+}
+
+.other-info .container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px
+}
+
+.other-info .item{
+    border-top: 2px solid gray;
 }
