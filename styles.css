@@ -12,14 +12,10 @@
 
 .root-container {
     display: grid;
-    grid-template: 30vh 100vh / 40vh 1fr 48vh;
+    grid-template: 30vh 100vh/ 40vh 1fr 48vh;
     grid-template-areas: 
         "sidebar header header"
         "sidebar projects infos";
-}
-
-.root-container > div {
-    border: 2px solid red;
 }
 
 .sidebar {
