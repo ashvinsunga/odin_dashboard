@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Arcon-Regular";
-    src: url(fonts/Arcon-Regular.otf);
+    src: url(fonts/Arcon-Regular.otf);    
 }
 
 * {
@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arcon-Regular;
+    font-size: 25px;
 }
 
 .root-container {
@@ -18,19 +19,88 @@
 .header {
     grid-column: 2 / 4;
     background-color: whitesmoke;
+     padding: 15px 0;
+}
+
+.header .bottom .left {
+    align-items: center;
+}
+
+.header .bottom .right {
+    align-items: center;
+    button {
+    background-color: rgb(9, 141, 189);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    padding: 10px 20px;
+    align-content: end;
+    }
+}
+
+.header .large{
+    background-color: darkkhaki;
 }
 
 .header .top {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    align-items: end;
+   
     .left {
         display: grid;
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1fr 6fr;
+        padding: 10px;
+        .search-icon {
+            justify-self: center;
+        }
+        input {
+            width: 40vw;
+            height: 35px;
+            border-radius: 10px; 
+            background-color: gainsboro;
+        }
     }
     .right {
         display: grid;
         grid-template-columns: 1fr 1fr 2fr;
+        align-items: center;
+        .round-bg.small {
+            background-color: darkkhaki;
+        }
     }
+}
+
+.round-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.small {
+    width: 70px;
+    height: auto;
+}
+
+.small img{
+    width: 40px;
+    height: auto;
+}
+.round-bg.small img {
+    width: 70px;
+    height: auto;
+}
+
+.round-bg.large {
+    width: 100px;
+    height: auto;
+    justify-self: center;
 }
 
 .header .bottom {
@@ -48,41 +118,86 @@
 .sidebar {
     grid-row: 1 / 3;
     display: grid;
-    gap: 20px;
-    background-color: skyblue;
+    justify-content: center;
+    align-content: start;
+    justify-items: start;
+    padding-top: 30px;
+    gap: 50px;
+    background-color: rgb(9, 141, 189);
+    * {
+        color: white;
+        list-style: none;
+    }
+    .nav-top ul {
+        display: grid;
+        gap: 10px;
+    }
+    .nav-bottom ul {
+        display: grid;
+        gap: 10px;
+    }
 }
 
 .projects {
     grid-column: 2 / 3;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: yellow;
-}   .title {
-    grid-column: 1 / 3;
-    background-color: aqua;
-}
-
-.projects > .card {
-    /* border-radius: 10px;
-    border-left: 7px solid gold;
-    background-color: white;
-    box-shadow: 2px 2px 2px black;
-    padding: 30px 50px 20px 20px;
-    div {
-        justify-self: start;
-
-    }
-        h2 {
-            line-height: 1.5;
+    background-color: gainsboro;
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            border-left: 10px solid green;
+            box-shadow: 2px 2px 2px black;
+            margin: 15px;
+            padding: 35px;
+            .card-details {
+                display: flex;
+                flex-direction: column;
+                h2 {
+                    line-height: 2;
+                }
+                p {
+                    opacity: 0.7;
+                }
+                .icons {
+                    align-self: end;
+                    margin-top: 15px;
+                }
+            }
         }
-        p {
-            font-size: 2.1vh;
-            opacity: 0.7;
-        } */
+    }
 
-}
+}   
 
 .other-info {
     grid-column: 3 / 4;
-    background-color: pink;
+    display: grid;
+    gap: 40px;
+    background-color: gainsboro;
+    .container {
+        display: grid;
+        gap: 15px;
+        background-color: white;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        .trending.item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+        }
+    }
+    .one {
+        background-color: greenyellow;
+    }
+    .two {
+        background-color: goldenrod;
+    }
+    .three {
+        background-color: darkmagenta;
+    }
+    .four {
+        background-color: gray;
+    }
 }
